@@ -12,12 +12,57 @@
     <link rel="stylesheet" href="game.css">
 </head>
 
-<body>
-    <h1>Hello-Bootstrap</h1>
+<body class="container-fluid">
+
+    <button type="button" onclick="getFighter('Tom')" id="tomPick">Tom</button>
+    <button type="button" onclick="getFighter('Bob')" id="bobPick">Bob</button>
+    <header class="row">
+    </header>
+
+
+    <div class="row">
+        <div class="col-6 text-white">
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <div class="player-health">
+                    <span>My health:<span id="my-health">--</span></span>
+                </div>
+                <div id="my-fighter"><img class="my-robot" src="https://robohash.org/me"></div>
+            </div>
+        </div>
+        <div class="col-6 text-white">
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <span>CPU health:<span id="cpu-health">--</span></span>
+                <div class="" id="enemy-fighter"><img class="enemy-robot" src="https://robohash.org/them"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="attacks row">
+        <div class="col-4"></div>
+        <div class="col-4 card">
+            <div class="row text-center">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" onclick="attack('slap')">SLAP</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" onclick="attack('punch')">PUNCH</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" onclick="attack('kick')">KICK</button>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+
+    </div>
 
 
 
-
+    <div class="">
+        <footer class="text-center">
+        </footer>
+    </div>
     <!-- scripts -->
     <script src="./app/game.js"></script>
 </body>
