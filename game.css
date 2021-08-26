@@ -1,6 +1,7 @@
 body {
     background-image: url('./assets/bg-scene.jpg');
     background-size: cover;
+    height: 100vh;
     background-repeat: no-repeat;
 }
 
@@ -8,4 +9,13 @@ footer {
     position: absolute;
     bottom: 0;
     height: 100px;
+}
+
+.robot {
+    height: 40vh;
+    width: auto;
+}
+
+.my-robot {
+    transform: rotateY(180deg);
 }

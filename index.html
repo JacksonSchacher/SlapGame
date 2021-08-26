@@ -8,31 +8,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="game.css">
 </head>
 
 <body class="container-fluid">
-
-    <button type="button" onclick="getFighter('Tom')" id="tomPick">Tom</button>
-    <button type="button" onclick="getFighter('Bob')" id="bobPick">Bob</button>
     <header class="row">
     </header>
+    <div class="row">
+        <div class="col-5">
+            <div id="my-health" class="mt-4"></div>
 
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-6 text-white">
             <div class="d-flex align-items-center justify-content-center flex-column">
                 <div class="player-health">
-                    <span>My health:<span id="my-health">--</span></span>
+                    <div>
+                    </div>
                 </div>
-                <div id="my-fighter"><img class="my-robot" src="https://robohash.org/me"></div>
+                <div id="my-fighter"><img class="my-robot robot" src="https://robohash.org/me"></div>
             </div>
         </div>
         <div class="col-6 text-white">
             <div class="d-flex align-items-center justify-content-center flex-column">
                 <span>CPU health:<span id="cpu-health">--</span></span>
-                <div class="" id="enemy-fighter"><img class="enemy-robot" src="https://robohash.org/them"></div>
+                <div class="" id="enemy-fighter"><img class="enemy-robot robot" src="https://robohash.org/them"></div>
             </div>
         </div>
     </div>
@@ -65,6 +68,7 @@
     </div>
     <!-- scripts -->
     <script src="./app/game.js"></script>
+
 </body>
 
 </html>

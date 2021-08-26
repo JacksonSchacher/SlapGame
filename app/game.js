@@ -37,6 +37,7 @@ let Computer = {
 }
 let damageDealt = 0
 
+
 function getFighter(player) {
     if (player == "Bob") {
         currentFighter = fighters.Bob
@@ -124,13 +125,40 @@ function cpuAttack() {
 }
 
 function update() {
-    document.getElementById('my-health').innerText = currentFighter.health
-    document.getElementById('cpu-health').innerText = Computer.Bowser.health
-    document.getElementById('hits').innerText = hits
+    document.getElementById('my-health').innerHTML = /*html*/ `<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="${currentFighter.health}" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+  </div>`
+    document.getElementById("my-health").style.width = currentFighter.health + "%"
+        // document.getElementById('cpu-health').innerText = Computer.Bowser.health
+        // document.getElementById('hits').innerText = hits
 }
+
+function popupChoose() {
+    Swal.fire({
+        title: 'Choose Your Character',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: `Tom`,
+        denyButtonText: `Bob`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire(currentFighter = fighters.Tom)
+            update()
+            return currentFighter
+        } else if (result.isDenied) {
+            Swal.fire(currentFighter = fighters.Bob)
+            update()
+            return currentFighter
+        }
+    })
+}
+
 
 
 function test() {
     console.log(Computer.Bowser.health)
 
 }
+
+popupChoose()
