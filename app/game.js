@@ -129,15 +129,17 @@ function update() {
     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="${currentFighter.health}" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
   </div>`
     document.getElementById("my-health").style.width = currentFighter.health + "%"
-        // document.getElementById('cpu-health').innerText = Computer.Bowser.health
-        // document.getElementById('hits').innerText = hits
+    document.getElementById('cpu-health').innerHTML = `<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="${Computer.Bowser.health}" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+  </div>`
+    document.getElementById("cpu-health").style.width = Computer.Bowser.health + "%"
 }
 
 function popupChoose() {
     Swal.fire({
         title: 'Choose Your Character',
         showDenyButton: true,
-        showCancelButton: true,
+        showCancelButton: false,
         confirmButtonText: `Tom`,
         denyButtonText: `Bob`,
     }).then((result) => {
